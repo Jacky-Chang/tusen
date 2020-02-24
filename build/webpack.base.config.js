@@ -9,7 +9,8 @@ module.exports = {
     map: './src/map.js',
     brand: './src/brand.js',
     admire: './src/admire.js',
-    detail: './src/detail.js'
+    detail: './src/detail.js',
+    join: './src/join.js'
   }, // 入口文件
   output: {
     filename: '[name].[hash].js',
@@ -95,6 +96,16 @@ module.exports = {
       filename: 'detail.html',
       template: './src/detail.html',
       chunks: ['detail','common'],
+      cache: true,
+      minify: {
+        removeComments: true
+      },
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'join.html',
+      template: './src/join.html',
+      chunks: ['join','common'],
       cache: true,
       minify: {
         removeComments: true

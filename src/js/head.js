@@ -5,6 +5,7 @@ const list = [
   {name:'品牌介绍',href: '/brand.html'},
   {name:'案例赏析',href: '/admire.html'},
   {name:'联络信息',href: '/map.html'},
+  {name:'招商加盟',href: '/join.html'},
 ]
 document.getElementById('head').innerHTML  = head({list: list, pathName: window.location.pathname})
 !function() {
