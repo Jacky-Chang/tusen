@@ -10,7 +10,9 @@ module.exports = {
     brand: './src/brand.js',
     admire: './src/admire.js',
     detail: './src/detail.js',
-    join: './src/join.js'
+    join: './src/join.js',
+    series: './src/series.js',
+    series_detail: './src/series_detail.js'
   }, // 入口文件
   output: {
     filename: '[name].[hash].js',
@@ -106,6 +108,26 @@ module.exports = {
       filename: 'join.html',
       template: './src/join.html',
       chunks: ['join','common'],
+      cache: true,
+      minify: {
+        removeComments: true
+      },
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'series.html',
+      template: './src/series.html',
+      chunks: ['series','common'],
+      cache: true,
+      minify: {
+        removeComments: true
+      },
+      hash: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'series_detail.html',
+      template: './src/series_detail.html',
+      chunks: ['series_detail','common'],
       cache: true,
       minify: {
         removeComments: true

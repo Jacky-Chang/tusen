@@ -1,16 +1,17 @@
-<div class='t1'>{{topic}}案例</div>
+<div class='t1'>案例中心</div>
+<span class="line"></span>
 <ul class='list_imgs'>
 {{each list}}
   <li>
-    <a href="/detail.html">
+    <a href="/detail.html?title={{$value.title}}">
       <div class="imgs">
-        <img src="{{$value.imgrul}}" alt="">
+        <img src="{{$value.coverImg}}" alt="">
       </div>
       <div class="txt">
         <div>
-          <h5>厦门国际广场</h5>
+          <h5>{{$value.title}}</h5>
           <div class="tubiao">
-            <img src="/cp-more.png" alt="厦门国际广场">
+            <img src="/cp-more.png" alt="{{$value.title}}">
           </div>
           <div class="more">MORE</div>
         </div>

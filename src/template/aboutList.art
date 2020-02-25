@@ -12,8 +12,7 @@
           {{else}}
             <li>
           {{/if}}  
-            <a  class='about_list {{$value.classname}}'></a>
-            <p>{{$value.dir}}</p>
+            <a class='about_list {{$value.classname}}'>{{$value.title}}</a>
           </li>
         {{/each}}
       </ul>
@@ -27,12 +26,11 @@
           {{else}}
             <li>
           {{/if}}
-              <a href="/admire.html?topic={{$value.dir}}">
+              <a href="/series_detail.html?title={{$value.title}}">
               <div class='li-bg {{$value.imgsrc}}'></div>
               <div class='pro-nav-text'>
                 <div class='t1'>{{$value.info.t1}}</div>
-                <div class="t2">{{$value.info.t21}}<br>{{$value.info.t22}}</div>
-                <span class="t3">{{$value.info.t3}}</span>            
+                <span class="t2">{{$value.info.t2}}</span>            
               </div>
               </a>
           </li>

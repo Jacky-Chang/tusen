@@ -1,13 +1,22 @@
 import '../style/head.less'
 let head = require('../template/head.art')
 const list = [
-  {name:'首页',href: '/'},
-  {name:'品牌介绍',href: '/brand.html'},
-  {name:'案例赏析',href: '/admire.html'},
-  {name:'联络信息',href: '/map.html'},
+  {name:'关于我们',href: '/brand.html'},
+  {name:'产品系列',href: '/series.html'},
+  {name:'案例中心',href: '/admire.html'},
   {name:'招商加盟',href: '/join.html'},
+  {name:'联系我们',href: '/map.html'},
 ]
-document.getElementById('head').innerHTML  = head({list: list, pathName: window.location.pathname})
+let pathName = window.location.pathname
+// 处理首页以及二级页面
+if (pathName === "/") {
+  pathName = '/brand.html'
+} else if (pathName === "/series_detail.html") {
+  pathName = '/series.html'
+} else if (pathName === "/detail.html") {
+  pathName = '/admire.html'
+}
+document.getElementById('head').innerHTML  = head({list: list, pathName: pathName})
 !function() {
   let hanli = function() {
     var self = this;
@@ -51,13 +60,6 @@ document.getElementById('head').innerHTML  = head({list: list, pathName: window.
             "width" : _width
           }, "fast");
         });
-        // $targetEle.click(function () {
-        //   var $_parent = $(this),//.parent(),
-        //   _width = $_parent.outerWidth(true) - self.offset*2,
-        //   posL = $_parent.offset().left + self.offset;
-        //   $navBox.curP = posL
-        //   $navBox.curW = _width
-        // });
         $navBox.mouseleave(function (cur, wid) {
           
           cur = self.curP;
